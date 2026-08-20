@@ -1,0 +1,133 @@
+class Common {
+    static String PM = "Narendra Modi";
+
+    public void display() {
+        System.out.println("1. PM + PM");
+        System.out.println("2. CM + CM");
+    }
+}
+
+class Andhrapradesh extends Common {
+    String place;
+    int value;
+
+    public void set_dim(String place, int value) {
+        this.place = place;
+        this.value = value;
+    }
+
+    public void display() {
+        System.out.println("State: Andhra Pradesh");
+        System.out.println("Place: " + place);
+        System.out.println("Value: " + value);
+        System.out.println("PM: " + PM);
+        System.out.println();
+    }
+}
+
+class Tamilnaidu extends Common {
+    String place;
+    int value;
+
+    public void set_dim(String place, int value) {
+        this.place = place;
+        this.value = value;
+    }
+
+    public void display() {
+        System.out.println("State: Tamil Nadu");
+        System.out.println("Place: " + place);
+        System.out.println("Value: " + value);
+        System.out.println("PM: " + PM);
+        System.out.println();
+    }
+}
+
+public class main {
+    public static void main(String[] args) {
+
+        Andhrapradesh a = new Andhrapradesh();
+        Andhrapradesh b = new Andhrapradesh();
+        Andhrapradesh c = new Andhrapradesh();
+
+        Tamilnaidu a1 = new Tamilnaidu();
+        Tamilnaidu b1 = new Tamilnaidu();
+
+        a.set_dim("Amaravathi", 35);
+        b.set_dim("Srirampuram", 45);
+        c.set_dim("East Godavari", 25);
+
+        a.display();
+        b.display();
+        c.display();
+
+        System.out.println("...................");
+
+        a1.set_dim("Chennai", 55);
+        b1.set_dim("Navalur", 75);
+
+        a1.display();
+        b1.display();
+    }
+} import java.util.Scanner;
+
+class Student {
+    String name;
+    int m1, m2, m3;
+
+    Student(String name, int m1, int m2, int m3) {
+        this.name = name;
+        this.m1 = m1;
+        this.m2 = m2;
+        this.m3 = m3;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Mark 1: " + m1);
+        System.out.println("Mark 2: " + m2);
+        System.out.println("Mark 3: " + m3);
+        System.out.println("Total: " + (m1 + m2 + m3));
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int m1, m2, m3;
+        String name;
+
+        System.out.println("Enter num of students: ");
+        int n = sc.nextInt();
+
+        Student[] s = new Student[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter details of student " + (i + 1));
+
+            System.out.print("Enter name: ");
+            name = sc.next();
+
+            System.out.print("Enter mark 1: ");
+            m1 = sc.nextInt();
+
+            System.out.print("Enter mark 2: ");
+            m2 = sc.nextInt();
+
+            System.out.print("Enter mark 3: ");
+            m3 = sc.nextInt();
+
+            s[i] = new Student(name, m1, m2, m3);
+        }
+
+        System.out.println("\nStudent Details:");
+
+        for (int i = 0; i < n; i++) {
+            s[i].display();
+        }
+
+        sc.close();
+    }
+}
